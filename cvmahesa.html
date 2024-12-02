@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400&display=swap" rel="stylesheet">
+    <title>Curriculum Vitae</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            font-family: "Montserrat Alternates", sans-serif;
+            color: #7D8693;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 400px;
+            /* border: 1px solid black; */
+        }
+
+        .logo-hero {
+            position: absolute;
+            border: 1px solid #7D8693;
+            border-radius: 100%;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 3s ease-in-out, visibility 0s 1s;
+            animation: bounce 3s infinite;
+        }
+
+        /* Animasi Bounce (memantul) */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                /* Posisi awal dan akhir */
+            }
+
+            50% {
+                transform: translateY(-10px);
+                /* Gerakan ke atas */
+            }
+        }
+
+        .imgHero {
+            width: 100%;
+            max-width: 440px;
+            height: 350px;
+            background-image: url("profile2.png");
+            background-position: bottom;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .montsemibold {
+            font-family: "Montserrat Alternates", sans-serif;
+            color: #7D8693;
+            font-weight: 600;
+            font-style: normal;
+            /* border: 1px solid black; */
+            height: fit-content;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav {
+            padding: 0 10px;
+            align-items: center;
+            justify-content: space-between;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 40px;
+            color: #7D8693;
+            /* background-image: url('Rectangle1.png'); */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .nav hr {
+            width: 55%;
+            color: #7D8693;
+            background-color: #7D8693;
+            height: 3px;
+        }
+
+
+
+        .skills span {
+            display: inline-block;
+            background: #ddd;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 3px;
+        }
+
+        .biodata {
+            display: flex;
+            gap: 10px;
+
+        }
+
+        .biodata p {
+            font-family: "Montserrat Alternates", sans-serif;
+            color: #7D8693;
+            font-weight: 600;
+            font-style: normal;
+            font-size: small;
+        }
+
+        .headEdu {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+
+        }
+
+        .eduisi {
+            padding-left: 30px !important;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+            width: 100%;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="nav">
+                <p class="montsemibold"> Hallo Saya Mahesa</p>
+                <hr />
+                <p class="montsemibold">Web Developer</p>
+            </div>
+            <div class="imgHero"></div>
+            <div class="logo-hero" style="left: 18%;
+            top: 50%;">
+                <img src="https://laravel.com/img/logomark.min.svg" alt="">
+            </div>
+            <div class="logo-hero" style="left: 25%;
+            top: 18%;">
+                <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" alt="">
+            </div>
+            <div class="logo-hero" style="
+            top: 6%;">
+                <img src="https://cdn1.iconfinder.com/data/icons/akar-vol-1/24/nextjs-fill-256.png" alt="">
+            </div>
+            <div class="logo-hero" style="right: 18%;
+            top: 50%;">
+                <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/181_Java_logo_logos-256.png"
+                    alt="">
+            </div>
+            <div class="logo-hero" style="right: 25%;
+            top: 18%;"">
+                <img src="
+                data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAYFBMVEUxeMb///8tdsVynNTR3e8icsSPr9tUis0ndMXz9vs3e8cccMP3+fwAZ8A9fchnldGWtN3j6vWHqtnq7/i9z+lbjs4AasHZ4/JNhsvG1eykveEAYr9Fgsmyx+aDpth5odbhdRwvAAAEYElEQVR4nO2c2bajIBBFETVBywmjOETT//+Xrebe7ohoUHB4YPdTr8WNxwMylGUh6xeapbmPTsLP04z+k4J+JdkRA3yWJoSwyyKbjkQFaUhOVPSji4Rp8F/UI4azFb2B+PEr6oEuoqlThR5vUcFVfOqBOBhEpRfS1KlKe1E0PFvHmJB2omxytowxxLYQjU6fC8bgiKKMna2Ch2Uodc8WwQMpyi/We13/5ei0NXieC0oyGAwGg8FgMBgMBoPBYDAYDAaDwWAwGAwGg+FMMCYDGO+We4A//n2X47LwCVEex3Gelz57hgzIRm14A9MfASjj20cyYJ90R6vazhGszwDCKHNWk/ljWZhBUj0sEUGR2auTpTAR/9gidCQKQ54tNg8kOl+zKIAqWG4e+AeLwnD7Iul4URjq780PFoXBkWh+sChoZZofK4pJ9N3Rokgp1/xYUTID6mBRJBYJcOrUtu1XkhUKovBmUWw6j1c2YwDdJsF1IQzvyXtaXS0KoTtPyQ3ftJy0GC7C+FnTs2GUwImBlDdvk6jJFgBu42vZINwlTHrPa6ap0xjYi1rrRU1weVHi/FVIOFF/xOncgJJGXdTEqRlR3MQ5m6WMdSTlyjrFjfNq19xbSadcTpSzdte0io1Oec2OmqTHFD9NJXtmmcs6xe8QgnjHNHPZMcVPCd3kyXYbVpJOkZwXZVn1bp/oSDo1XWY6Cjvc50MPSacQE247Cxvv4ZasU8KtS4eTPvV/ICfr1HRS+CWoS92yZJ1CpJkRZVmPKgq1ypJ2aviwahYn1umWvChEFoMIDtEnS7r7Op7VkiqrxromiBVOdXul5eNocdc0P6xxCqHwS4DjpUfVGqf6e7hTsZwf9Gwe1jnVjXbWH1nmqXV4tdKp/jaaxaDCzIliFWudGv6GJAud2Kg/g+udQv0BL7ILsSTLytRFbXEKDV9k5+3M4IqVVW1yaoB0g0soq1J+Ajc6NYCZXwvmrQ3RBI7tTg2yoBSErZQ/XVVxapAliDoqz1VqTvXwt6Xh+VN1qiPktzSO6ps2dacQbrj4IFUd6bJOLV0GKs2iJJ3CjTt/If74dZRTbtLOn9L5IG2hGieSDy/S+8wmHCNuHaxUn74VMc+gDoWyXHv8E1Z70Dz1DsQGSTR9SQyT9yPKNTdkg2Y/oSDaNs+Pt+oYw3OyEw3uB3bfD177J28wsA5SxoIVWb0QyKY4ukeL4UV8IXyrol4xZWX3SUDV0zm2vnGY56UeDNXuVKuhtIxup5Rn8+FqekUVWqpM6XWqirQEXnQ65SWaAnqyWxfRAWFMkEW6IsWyO08clu3sodga1p+Zvc2Gyi5uGngfLNRlwoDuN8ebLiuBR+vYn9nX+NvK8kQjlp7oIeettJO6zZyioLRbbKq2TmMUwtxDh3O0ZdX5muzGtycuDBp83x/+4y7NApAeWOpJ8g76Uk+XLIp1yfJh1yy0dsmSdNcs3nfJMofXLAh5zdKZ1iWLjA6yrlOO9S89wT0NjngfbQAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+        </div>
+        <div class=" biodata" style="margin-top: 50px;">
+                <h1 class="montsemibold">Mahesa Syawal Abdurahman </h1>
+                <hr>
+                <p>Mahasiswa Rekayasa Perangkat Lunak dengan pengalaman profesional di bidang pengembangan website,
+                    menguasai bahasa pemrograman Java, JavaScript, dan PHP. Memiliki kemampuan untuk bekerja secara
+                    efektif,
+                    baik secara mandiri maupun kolaboratif dalam tim, serta berkomitmen untuk memberikan hasil yang
+                    optimal
+                    dan solusi inovatif dalam setiap proyek yang dikerjakan. </p>
+            </div>
+
+            <div class="education" style="margin-top: 20px;">
+                <h2>Pendidikan</h2>
+                <hr>
+                <div class="headEdu">
+                    <div>
+                        <h3>Universitas Pendidikan Indonesia</h3>
+                        <p>Jurusan Rekayasa Perangkat Lunak</p>
+
+                    </div>
+                    <b>JUl 2024 - Sekarang</b>
+                </div>
+                <div class="eduisi">
+                    <ul>
+                        <li>
+                            Merancang sesuai hirarki pengembangan hingga mengimplementasikan Project
+                        </li>
+                        <li>
+                            Membuat Tim kecil untuk membuat beberapa portofolio
+                        </li>
+                    </ul>
+                </div>
+                <div class="headEdu">
+                    <div>
+                        <h3>SMKN 13 Bandung</h3>
+                        <p>Jurusan Rekayasa Perangkat Lunak</p>
+
+                    </div>
+                    <b>JUl 2020 - MEI 2023</b>
+                </div>
+                <div class="eduisi">
+                    <ul>
+                        <li>
+                            Aktif dalam kegiatan organisasi seperti PMR dan Bulutangkis
+                        </li>
+                        <li>
+                            Mengikuti Lomba Digital Inovation yang diselenggarakan oleh Skilvul
+                        </li>
+                        <li>
+                            Menjadi salah satu siswa yang diberikan kesempatan untuk mengikuti kegitan Project Based
+                            Learning
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="work" style="margin-top: 20px;">
+                <h2>Pengalaman Kerja</h2>
+                <hr>
+                <div class="headEdu">
+                    <div>
+                        <h3>Sagara Technology</h3>
+                        <p>Front-End Developer - <b>Internship</b></p>
+
+                    </div>
+                    <b>MEI 2023 - AGU 2023</b>
+                </div>
+                <div class="eduisi">
+                    <ul>
+                        <li>
+                            Memperdalam Ilmu Perancangan dan Pengembangan suatu aplikasi.
+                        </li>
+                        <li>
+                            Merancang dan Implementasi suatu project, dan ikut aktif dalam diskusi mingguan maupun
+                            bulanan
+                            yang diselenggarakan oleh kantor.
+                        </li>
+                        <li>
+                            Melakukan Bonding Antar team baik berupa kegiatan diluar kantor atau dalam kantor
+                        </li>
+                    </ul>
+                </div>
+                <div class="headEdu">
+                    <div>
+                        <h3>PT Basic Technology</h3>
+                        <p>Full-Stack Developer (PHP/Laravel) - <b>Internship</b></p>
+
+                    </div>
+                    <b>OKT 2022 - APR 2023</b>
+                </div>
+                <div class="eduisi">
+                    <ul>
+                        <li>
+                            Melakukan System Analisis untuk bisnis yang akan di lakukan dalam aplikasi dan diskusi
+                            dengan
+                            client terkait project yang ingin dibuat dan di kembangkan.
+                        </li>
+                        <li>
+                            Melakukan Tahapan Merancang tampilan dan design database untuk aplikasi yang akan dibuat.
+                        </li>
+                        <li>
+                            Mengimplementasikan aplikasi yang telah dibuat dan melakukan pemeliharaan secara berkala.
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="skills" style="margin-top: 20px;">
+                <h2>Keterampilan</h2>
+                <hr>
+                <p style="margin-top: 10px;"><b>Bahasa Pemrograman:</b> Java, PHP, JavaScript, TypeScript.</p>
+                <p><b>Framework/Library:</b> Laravel, Ajax, Jquery, React.js, Next.js, Redux. </p>
+                <p><b>Styling Framework/Library:</b> Boostrap, Tailwind.CSS, Matrial UI, Daisy.UI, Chart.js </p>
+            </div>
+            <div class="footer">
+                <a href="https://www.instagram.com/mahesasyawl/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png"
+                        alt="Instagram" style="width: 40px; height: 40px;">
+                </a>
+
+                <!-- GitHub Icon -->
+                <a href="https://github.com/MahesaSyawalA" target="_blank">
+                    <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub"
+                        style="width: 40px; height: 40px;">
+                </a>
+
+                <!-- LinkedIn Icon -->
+                <a href="https://www.linkedin.com/in/mahesa-syawal-abdurahman-872357287/" target="_blank">
+                    <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg"
+                        alt="LinkedIn" style="width: 40px; height: 40px;">
+                </a>
+            </div>
+
+        </div>
+        <script>
+            
+            const logos = document.querySelectorAll('.logo-hero');
+    
+            logos.forEach((logo, index) => {
+                setTimeout(() => {
+                    logo.style.opacity = '1';
+                    logo.style.visibility = 'visible';
+                }, 1000 * (index + 1)); 
+            });
+        </script>
+</body>
+
+</html>
